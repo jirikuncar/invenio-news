@@ -22,7 +22,7 @@
 from invenio.ext.assets import Bundle
 
 styles = Bundle(
-    'css/custom.css',
+    'css/news/base.css',
     filters="cleancss",
     output="webnews.css",
     weight=60,

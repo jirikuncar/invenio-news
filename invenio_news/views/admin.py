@@ -121,7 +121,7 @@ def Insert():
                 config.CFG_WEBNEWS_ADMIN_UPDATE + '/?id=' + str(Encode(id))
             )
             # return  render_template(
-            #     'admin/update.html',
+            #     'news/admin/update.html',
             #     EncodeStr=Encode,
             #     searchResult=result,
             #     display_forms=['normal','none','none']
@@ -134,21 +134,21 @@ def Insert():
             id = Decode(request.args.get('id', Encode(0)))
             if Decode(formAct) == '1':
                 return render_template(
-                    'admin/insert.html',
+                    'news/admin/insert.html',
                     EncodeStr=Encode,
                     display_forms=['none', 'normal', 'none'],
                     id=id
                 )
             elif Decode(formAct) == '2':
                 return render_template(
-                    'admin/insert.html',
+                    'news/admin/insert.html',
                     EncodeStr=Encode,
                     display_forms=['none', 'none', 'normal'],
                     id=id
                 )   # [news,tooltip,tag]
             else:
                 return render_template(
-                    'admin/insert.html',
+                    'news/admin/insert.html',
                     EncodeStr=Encode,
                     display_forms=['normal', 'none', 'none']
                 )   # [news,tooltip,tag]
@@ -223,7 +223,7 @@ def Update():
             if formAct == '1':
                 result = NwsToolTip.query.get(id)
                 return render_template(
-                    'admin/update.html',
+                    'news/admin/update.html',
                     EncodeStr=Encode,
                     searchResult=result,
                     display_forms=['none', 'normal', 'none'],
@@ -232,7 +232,7 @@ def Update():
             elif formAct == '2':
                 result = NwsTAG.query.get(id)
                 return render_template(
-                    'admin/update.html',
+                    'news/admin/update.html',
                     EncodeStr=Encode,
                     searchResult=result,
                     display_forms=['none', 'none', 'normal'],
@@ -241,7 +241,7 @@ def Update():
             else:
                 result = NwsSTORY.query.get(id)
                 return render_template(
-                    'admin/update.html',
+                    'news/admin/update.html',
                     EncodeStr=Encode,
                     searchResult=result,
                     display_forms=['normal', 'none', 'none']
@@ -268,7 +268,7 @@ def EDIT():
             NwsSTORY.body.contains(request.form['keywords'])
         ).all()
         return render_template(
-            'admin/Edit.html',
+            'news/admin/edit.html',
             searchResult=result,
             resultshow='block'
         )
@@ -276,7 +276,7 @@ def EDIT():
         config.CFG_WEBNEWS_ADMIN_SHOWRECORDS
     ).all()
     return render_template(
-        'admin/Edit.html',
+        'news/admin/edit.html',
         searchResult=result,
         resultshow='block',
         EncodeStr=Encode,

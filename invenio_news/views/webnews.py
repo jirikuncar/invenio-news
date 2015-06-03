@@ -99,7 +99,7 @@ def search():
         if keywords == '1':
             result1 = NwsSTORY.query.get(id)
             return render_template(
-                'details.html',
+                'news/details.html',
                 searchResult=result1
             )
         result1 = NwsTAG.query.filter(NwsTAG.tag.contains(keywords)).all()

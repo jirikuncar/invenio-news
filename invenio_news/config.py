@@ -19,6 +19,8 @@
 
 """News configuration options."""
 
+from __future__ import unicode_literals
+
 CFG_WEBNEWS_ADMIN_NAV_NAME = 'WebNew Admin'
 CFG_WEBNEWS_SEARCH_NAV_NAME = 'WebNew Search'
 CFG_WEBNEWS_ADMIN_MAIN_NAV = 'WebNew DashBoard'
